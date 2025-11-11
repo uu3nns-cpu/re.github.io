@@ -15,7 +15,7 @@
     </script>
     
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9257454501555292"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-9257454501555292"
          crossorigin="anonymous"></script>
     
     <!-- CSS -->
@@ -29,60 +29,111 @@
     <link rel="stylesheet" href="css/guide-common.css">
     
     <style>
+        /* notice.html 스타일 적용 */
         .guide-hero {
             text-align: center;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, var(--accent-primary) 0%, #9333ea 100%);
-            border-radius: 20px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .guide-hero-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         
         .guide-hero h1 {
-            font-size: 2.5em;
-            color: white;
-            margin-bottom: 16px;
-            font-weight: 800;
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            font-weight: 700;
         }
         
         .guide-hero-subtitle {
-            font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.6;
-            margin: 0 auto;
-        }
-        
-        .quick-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .stat-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-        }
-        
-        .stat-icon {
-            font-size: 2.5em;
-            margin-bottom: 12px;
-        }
-        
-        .stat-value {
-            font-size: 1.8em;
-            font-weight: 800;
-            color: var(--accent-primary);
-            margin-bottom: 8px;
-        }
-        
-        .stat-label {
-            font-size: 0.95em;
+            font-size: 1em;
             color: var(--text-secondary);
-            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        /* 상담사 관점의 개인정보 보호 안내 */
+        .privacy-notice {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .privacy-notice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .privacy-notice-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .privacy-notice-icon {
+            font-size: 40px;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        
+        .privacy-notice-text {
+            flex: 1;
+        }
+        
+        .privacy-notice-text h3 {
+            font-size: 1.3em;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .privacy-notice-text p {
+            font-size: 1.05em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .privacy-notice-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .privacy-notice-btn {
+            background: var(--accent-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .privacy-notice-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
         }
         
         .guide-cards-grid {
@@ -160,52 +211,25 @@
             font-weight: 500;
         }
         
-        .security-banner {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border: 3px solid #f59e0b;
-            border-radius: 20px;
-            padding: 32px;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.25);
+        /* 비디오 스타일 */
+        .video-wrapper-centered {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
         
-        .security-icon {
-            font-size: 48px;
-            flex-shrink: 0;
-        }
-        
-        .security-text h3 {
-            font-size: 1.4em;
-            color: #92400e;
-            margin-bottom: 8px;
-            font-weight: 800;
-        }
-        
-        .security-text p {
-            font-size: 1em;
-            color: #78350f;
-            line-height: 1.6;
-        }
-        
-        .security-btn {
-            background: #f59e0b;
-            color: white;
-            padding: 14px 32px;
+        .video-wrapper-centered video {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
             border-radius: 12px;
-            font-size: 1em;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s;
-            white-space: nowrap;
-            flex-shrink: 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
         
-        .security-btn:hover {
-            background: #d97706;
-            transform: translateY(-2px);
+        @media (max-width: 768px) {
+            .video-wrapper-centered video {
+                max-height: 400px;
+            }
         }
     </style>
 </head>
@@ -213,53 +237,49 @@
     <div class="header"></div>
 
     <div class="guide-container">
-        <!-- Hero -->
+        <!-- Hero (notice.html 스타일) -->
         <div class="guide-hero">
-            <h1>🚀 RE: 사용 안내서</h1>
+            <div class="guide-hero-icon">📖</div>
+            <h1>RE: 사용 안내서</h1>
             <p class="guide-hero-subtitle">
                 상담사를 위한 AI 보고서 작성 도구<br>
                 5분이면 시작할 수 있습니다
             </p>
         </div>
 
-        <!-- Stats -->
-        <div class="quick-stats">
-            <div class="stat-card">
-                <div class="stat-icon">⚡</div>
-                <div class="stat-value">5분</div>
-                <div class="stat-label">설치 시간</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">✍️</div>
-                <div class="stat-value">30초</div>
-                <div class="stat-label">보고서 생성</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">💰</div>
-                <div class="stat-value">무료</div>
-                <div class="stat-label">Groq 사용 시</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">🔐</div>
-                <div class="stat-value">100%</div>
-                <div class="stat-label">로컬 저장</div>
+        <!-- 개인정보 보호 안내 (상담사 관점) -->
+        <div class="privacy-notice">
+            <div class="privacy-notice-content">
+                <div class="privacy-notice-icon">🔐</div>
+                <div class="privacy-notice-text">
+                    <h3>내담자 정보 보호가 최우선입니다</h3>
+                    <p>
+                        상담 현장에서 다루는 민감한 개인정보와 상담 내용은 반드시 안전하게 보호되어야 합니다. 
+                        RE:가 어떻게 데이터를 처리하고 보관하는지, 어떤 보안 수칙을 지켜야 하는지 꼭 확인해주세요.
+                    </p>
+                    <a href="04-security.html" class="privacy-notice-btn">보안 가이드 확인하기 →</a>
+                </div>
             </div>
         </div>
 
-        <!-- Security Banner -->
-        <div class="security-banner">
-            <div class="security-icon">🛡️</div>
-            <div class="security-text">
-                <h3>보안이 가장 중요합니다</h3>
-                <p>데이터 처리 방식을 먼저 확인하세요. 개인정보 보호 가이드 필독!</p>
+        <!-- 빠른 시작 영상 -->
+        <div class="guide-section">
+            <h2 style="text-align: center; margin-bottom: 20px;">
+                🎬 보고서 작성 예제 영상
+            </h2>
+            <div class="video-wrapper-centered">
+                <video 
+                    controls
+                    preload="metadata"
+                    style="width: 100%; max-width: 900px; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
+                    <source src="../guidevideo/ReportPage.mp4" type="video/mp4">
+                    브라우저가 비디오 태그를 지원하지 않습니다.
+                </video>
             </div>
-            <a href="04-security.html" class="security-btn">보안 가이드 →</a>
         </div>
 
         <!-- Guide Cards -->
         <div class="guide-section">
-            <h2 style="text-align: center; font-size: 1.8em; margin-bottom: 32px;">📚 가이드 목차</h2>
-            
             <div class="guide-cards-grid">
                 <a href="01-start.html" class="guide-card">
                     <div class="card-header">
@@ -320,13 +340,6 @@
                     </div>
                 </a>
             </div>
-        </div>
-
-        <!-- CTA -->
-        <div style="text-align: center; margin-top: 48px; padding: 40px; background: var(--bg-secondary); border-radius: 20px; border: 1px solid var(--border-color);">
-            <h3 style="font-size: 1.6em; margin-bottom: 12px; color: var(--text-primary);">🎯 지금 바로 시작하세요!</h3>
-            <p style="font-size: 1.05em; color: var(--text-secondary); margin-bottom: 24px;">5분만 투자하면 RE:를 완전히 이해하고 사용할 수 있습니다</p>
-            <a href="01-start.html" class="btn-back">1장부터 시작하기 →</a>
         </div>
 
         <!-- Home -->

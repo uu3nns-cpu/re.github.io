@@ -29,6 +29,27 @@
     <link rel="stylesheet" href="css/guide-common.css">
     
     <style>
+        /* 비디오 스타일 */
+        .video-embed-compact {
+            margin: 16px 0 24px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            background: #000;
+        }
+        
+        .video-embed-compact video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .video-embed-compact video {
+                max-height: 300px;
+            }
+        }
+        
         .shortcut-table {
             width: 100%;
             border-collapse: collapse;
@@ -187,10 +208,18 @@
             </ul>
         </div>
 
-        <!-- 완료 -->
-        <div class="info-box success">
-            <h4>✅ 3장 완료!</h4>
-            <p>AI 챗봇, 보고서 관리, 단축키를 익혔습니다. 다음 장에서 보안을 알아봅시다.</p>
+        <!-- 사례개념화 예시 -->
+        <div class="guide-section">
+            <h2>🎬 사례개념화 예시</h2>
+            <p style="margin-bottom: 20px;">사례개념화 보고서를 작성하는 방법을 영상으로 확인하세요.</p>
+            <div class="video-embed-compact">
+                <video 
+                    controls
+                    preload="metadata">
+                    <source src="../guidevideo/CaseFormulation.mp4" type="video/mp4">
+                    브라우저가 비디오 태그를 지원하지 않습니다.
+                </video>
+            </div>
         </div>
 
         <!-- 네비게이션 -->

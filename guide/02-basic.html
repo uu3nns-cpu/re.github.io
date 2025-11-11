@@ -27,6 +27,33 @@
     <link rel="stylesheet" href="../src/css/base/browser-compatibility.css">
     <link rel="stylesheet" href="../src/css/components/header-unified.css">
     <link rel="stylesheet" href="css/guide-common.css">
+    
+    <style>
+        /* 비디오 스타일 */
+        .video-embed-compact {
+            margin: 16px 0 24px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            background: #000;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .video-embed-compact video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+        }
+        
+        @media (max-width: 768px) {
+            .video-embed-compact video {
+                max-height: 350px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="header"></div>
@@ -49,25 +76,20 @@
             <div class="two-column">
                 <div class="column-box" style="border-color: var(--accent-primary);">
                     <h4 style="color: var(--accent-primary);">🌟 GPT-4o-mini (추천)</h4>
-                    <p><strong>장점:</strong></p>
                     <ul style="margin-left: 20px;">
                         <li>명령을 정확하게 이해</li>
-                        <li>첫 이용시 $5 크레딧 제공</li>
                         <li>결제수단 미등록시 무료</li>
                         <li>보고서 품질 우수</li>
                     </ul>
-                    <p><strong>단점:</strong> 크레딧 소진 시 새 계정 필요</p>
                 </div>
                 
                 <div class="column-box">
                     <h4>🚀 Groq</h4>
-                    <p><strong>장점:</strong></p>
                     <ul style="margin-left: 20px;">
                         <li>완전 무료</li>
                         <li>빠른 속도</li>
                         <li>간단한 가입</li>
                     </ul>
-                    <p><strong>단점:</strong> 하루 사용량 제한, 품질 낮음</p>
                 </div>
             </div>
 
@@ -81,6 +103,29 @@
         <div class="guide-section">
             <h2>🔑 2단계: API 키 발급</h2>
             
+            <!-- Groq API 키 발급 영상 -->
+            <h3 style="margin-top: 30px; font-size: 1.3em; color: var(--text-primary);">🚀 Groq API 키 발급 영상</h3>
+            <div class="video-embed-compact">
+                <video 
+                    controls
+                    preload="metadata">
+                    <source src="../guidevideo/GroqAPI1.mp4" type="video/mp4">
+                    브라우저가 비디오 태그를 지원하지 않습니다.
+                </video>
+            </div>
+            
+            <!-- GPT-4o-mini API 키 발급 영상 -->
+            <h3 style="margin-top: 40px; font-size: 1.3em; color: var(--text-primary);">🌟 GPT-4o-mini API 키 발급 영상</h3>
+            <div class="video-embed-compact">
+                <video 
+                    controls
+                    preload="metadata">
+                    <source src="../guidevideo/GPTAPI2.mp4" type="video/mp4">
+                    브라우저가 비디오 태그를 지원하지 않습니다.
+                </video>
+            </div>
+            
+            <h3 style="margin-top: 40px; font-size: 1.2em; color: var(--text-primary);">📝 단계별 가이드</h3>
             <div class="step-box">
                 <div class="step-title">
                     <span class="step-number">1</span>
@@ -140,6 +185,18 @@
         <div class="guide-section">
             <h2>📝 4단계: 첫 보고서 작성</h2>
             
+            <!-- 보고서 작성 예제 영상 -->
+            <h3 style="margin-bottom: 16px; font-size: 1.3em; color: var(--text-primary);">🎬 보고서 작성 예제 영상</h3>
+            <div class="video-embed-compact">
+                <video 
+                    controls
+                    preload="metadata">
+                    <source src="../guidevideo/ReportPage.mp4" type="video/mp4">
+                    브라우저가 비디오 태그를 지원하지 않습니다.
+                </video>
+            </div>
+            
+            <h3 style="margin-top: 40px; font-size: 1.2em; color: var(--text-primary);">📝 단계별 가이드</h3>
             <ol style="font-size: 1.05em; line-height: 2;">
                 <li><strong>✍️ 보고서 작성</strong> 버튼 클릭</li>
                 <li><strong>상담 메모</strong> 입력 (자유롭게 작성)</li>
@@ -183,12 +240,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <!-- 완료 -->
-        <div class="info-box success">
-            <h4>🎉 2장 완료!</h4>
-            <p>API 키 발급과 첫 보고서 작성을 완료했습니다. 다음 장에서 고급 기능을 배워봅시다.</p>
         </div>
 
         <!-- 네비게이션 -->
