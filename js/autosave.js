@@ -242,17 +242,10 @@ function loadReport(reportId) {
     if (report.groqOutput) {
         const groqDiv = document.getElementById('groqOutput');
         if (groqDiv) {
-            // 원본 텍스트 저장
             groqDiv.setAttribute('data-raw-text', report.groqOutput);
             
-            // 마크다운 렌더링 적용
             if (typeof renderMarkdown === 'function') {
-                const renderedHtml = renderMarkdown(report.groqOutput);
-                if (typeof setSafeHtml === 'function') {
-                    setSafeHtml(groqDiv, renderedHtml);
-                } else {
-                    groqDiv.innerHTML = renderedHtml;
-                }
+                groqDiv.innerHTML = renderMarkdown(report.groqOutput);
                 groqDiv.classList.add('markdown-rendered');
             } else {
                 groqDiv.textContent = report.groqOutput;
@@ -276,17 +269,9 @@ function loadReport(reportId) {
         
         const groqCompare = document.getElementById('groqOutputCompare');
         if (groqCompare) {
-            // 원본 텍스트 저장
             groqCompare.setAttribute('data-raw-text', report.groqOutput);
-            
-            // 마크다운 렌더링 적용
             if (typeof renderMarkdown === 'function') {
-                const renderedHtml = renderMarkdown(report.groqOutput);
-                if (typeof setSafeHtml === 'function') {
-                    setSafeHtml(groqCompare, renderedHtml);
-                } else {
-                    groqCompare.innerHTML = renderedHtml;
-                }
+                groqCompare.innerHTML = renderMarkdown(report.groqOutput);
                 groqCompare.classList.add('markdown-rendered');
             } else {
                 groqCompare.textContent = report.groqOutput;
@@ -310,17 +295,10 @@ function loadReport(reportId) {
     if (report.gptOutput) {
         const gptDiv = document.getElementById('gptOutput');
         if (gptDiv) {
-            // 원본 텍스트 저장
             gptDiv.setAttribute('data-raw-text', report.gptOutput);
             
-            // 마크다운 렌더링 적용
             if (typeof renderMarkdown === 'function') {
-                const renderedHtml = renderMarkdown(report.gptOutput);
-                if (typeof setSafeHtml === 'function') {
-                    setSafeHtml(gptDiv, renderedHtml);
-                } else {
-                    gptDiv.innerHTML = renderedHtml;
-                }
+                gptDiv.innerHTML = renderMarkdown(report.gptOutput);
                 gptDiv.classList.add('markdown-rendered');
             } else {
                 gptDiv.textContent = report.gptOutput;
@@ -344,17 +322,9 @@ function loadReport(reportId) {
         
         const gptCompare = document.getElementById('gptOutputCompare');
         if (gptCompare) {
-            // 원본 텍스트 저장
             gptCompare.setAttribute('data-raw-text', report.gptOutput);
-            
-            // 마크다운 렌더링 적용
             if (typeof renderMarkdown === 'function') {
-                const renderedHtml = renderMarkdown(report.gptOutput);
-                if (typeof setSafeHtml === 'function') {
-                    setSafeHtml(gptCompare, renderedHtml);
-                } else {
-                    gptCompare.innerHTML = renderedHtml;
-                }
+                gptCompare.innerHTML = renderMarkdown(report.gptOutput);
                 gptCompare.classList.add('markdown-rendered');
             } else {
                 gptCompare.textContent = report.gptOutput;

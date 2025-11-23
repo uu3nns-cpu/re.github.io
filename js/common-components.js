@@ -72,6 +72,7 @@ function getCommonFooterTemplate() {
                     <a href="${base}/guide/index.html" class="footer-link">사용 안내서</a>
                     <a href="${base}/changelog.html" class="footer-link">업데이트 내역</a>
                     <a href="${base}/donate.html" class="footer-link">후원하기</a>
+                    <a href="${base}/terms.html" class="footer-link">이용약관</a>
                     <a href="${base}/privacy.html" class="footer-link">개인정보 보호정책</a>
                     <a href="${base}/notice.html" class="footer-link">공지사항</a>
                     <a href="${base}/sitemap.html" class="footer-link">사이트맵</a>

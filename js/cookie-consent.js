@@ -68,13 +68,14 @@
         banner.className = 'cookie-consent';
         banner.id = 'cookieConsentBanner';
         banner.innerHTML = `
+            <div class="cookie-consent-overlay"></div>
             <div class="cookie-consent-container">
                 <div class="cookie-consent-text">
-                    <div class="cookie-consent-title">🍪 쿠키 사용 안내</div>
+                    <div class="cookie-consent-title">🍪 쿠키 사용 동의</div>
                     <div class="cookie-consent-description">
-                        이 사이트는 사용자 경험 개선과 광고 표시를 위해 쿠키를 사용합니다. 
-                        쿠키 사용에 동의하시면 "동의" 버튼을 클릭해주세요.
-                        자세한 내용은 <a href="privacy.html" target="_blank">개인정보 처리방침</a>을 확인해주세요.
+                        이 사이트는 사용자 경험 개선과 통계 분석을 위해 <strong>쿠키를 사용</strong>합니다.<br>
+                        서비스를 계속 이용하시려면 쿠키 사용에 동의해주세요.<br>
+                        <small>자세한 내용은 <a href="privacy.html" target="_blank">개인정보 보호정책</a>을 확인해주세요.</small>
                     </div>
                 </div>
                 <div class="cookie-consent-buttons">
@@ -83,9 +84,6 @@
                     </button>
                     <button class="cookie-consent-btn cookie-consent-btn-decline" onclick="declineCookies()">
                         ✕ 거부
-                    </button>
-                    <button class="cookie-consent-btn cookie-consent-btn-settings" onclick="window.location.href='privacy.html'">
-                        설정
                     </button>
                 </div>
             </div>
@@ -96,7 +94,7 @@
         // 페이드인 애니메이션
         setTimeout(() => {
             banner.classList.add('show');
-        }, 100);
+        }, 300);
     }
     
     // 배너 숨기기

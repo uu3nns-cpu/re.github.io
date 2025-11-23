@@ -1,0 +1,36 @@
+# RE: 간편해진 보고서 작성 - robots.txt
+# https://uu3nns-cpu.github.io/
+
+User-agent: *
+Allow: /
+
+# 크롤링 허용 페이지
+Allow: /index.html
+Allow: /report.html
+Allow: /settings.html
+Allow: /guide/
+Allow: /notice.html
+Allow: /changelog.html
+Allow: /donate.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /sitemap.html
+
+# 크롤링 제외 페이지
+Disallow: /data-management.html
+Disallow: /report-management.html
+Disallow: /js/
+Disallow: /src/
+Disallow: /guidevideo/
+Disallow: /image/
+Disallow: /docs/
+Disallow: /archive/
+
+# 404 페이지 제외
+Disallow: /404.html
+
+# 사이트맵 위치
+Sitemap: https://uu3nns-cpu.github.io/sitemap.xml
+
+# 크롤링 속도 제한 (1초당 1회 요청)
+Crawl-delay: 1

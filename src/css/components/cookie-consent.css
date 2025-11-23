@@ -1,81 +1,125 @@
-/* Cookie Consent Banner Styles */
+/* Cookie Consent Banner Styles - Modal Version */
 .cookie-consent {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    background: var(--bg-secondary);
-    border-top: 2px solid var(--border-color);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-    padding: 20px;
+    bottom: 0;
     z-index: 10000;
     display: none;
-    animation: slideUp 0.3s ease-out;
 }
 
 .cookie-consent.show {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
 }
 
-@keyframes slideUp {
+@keyframes fadeIn {
     from {
-        transform: translateY(100%);
         opacity: 0;
     }
     to {
-        transform: translateY(0);
         opacity: 1;
     }
 }
 
+/* 오버레이 (배경 어둡게) */
+.cookie-consent-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* 모달 컨테이너 */
 .cookie-consent-container {
-    max-width: 1200px;
+    position: relative;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+    z-index: 10001;
+    animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid var(--border-color);
+}
+
+@keyframes slideIn {
+    from {
+        transform: scale(0.8) translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
 }
 
 .cookie-consent-text {
-    flex: 1;
-    min-width: 300px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .cookie-consent-title {
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
 
 .cookie-consent-description {
-    font-size: 0.9em;
+    font-size: 1em;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.8;
+}
+
+.cookie-consent-description strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.cookie-consent-description small {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.85em;
+    opacity: 0.8;
 }
 
 .cookie-consent-description a {
     color: var(--accent-primary);
     text-decoration: underline;
+    font-weight: 600;
+}
+
+.cookie-consent-description a:hover {
+    color: var(--accent-hover);
 }
 
 .cookie-consent-buttons {
     display: flex;
     gap: 12px;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cookie-consent-btn {
-    padding: 12px 24px;
+    padding: 14px 32px;
     border: none;
-    border-radius: 8px;
-    font-size: 0.9em;
+    border-radius: 12px;
+    font-size: 1em;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
     white-space: nowrap;
+    flex: 1;
+    max-width: 200px;
 }
 
 .cookie-consent-btn-accept {
@@ -86,43 +130,65 @@
 .cookie-consent-btn-accept:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.cookie-consent-btn-accept:active {
+    transform: translateY(0);
 }
 
 .cookie-consent-btn-decline {
     background: var(--bg-tertiary);
     color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
 }
 
 .cookie-consent-btn-decline:hover {
     background: var(--bg-primary);
     border-color: var(--accent-primary);
-}
-
-.cookie-consent-btn-settings {
-    background: transparent;
-    color: var(--text-secondary);
-    text-decoration: underline;
-    padding: 12px 16px;
-}
-
-.cookie-consent-btn-settings:hover {
     color: var(--accent-primary);
 }
 
+.cookie-consent-btn-decline:active {
+    transform: scale(0.98);
+}
+
+/* 반응형 */
 @media (max-width: 768px) {
     .cookie-consent-container {
-        flex-direction: column;
-        align-items: stretch;
+        padding: 30px 20px;
+        width: 95%;
+        border-radius: 16px;
+    }
+    
+    .cookie-consent-title {
+        font-size: 1.3em;
+    }
+    
+    .cookie-consent-description {
+        font-size: 0.95em;
     }
     
     .cookie-consent-buttons {
         flex-direction: column;
+        gap: 10px;
     }
     
     .cookie-consent-btn {
         width: 100%;
-        text-align: center;
+        max-width: none;
+        padding: 16px;
+    }
+}
+
+/* 다크모드 추가 스타일 */
+@media (prefers-color-scheme: dark) {
+    .cookie-consent-overlay {
+        background: rgba(0, 0, 0, 0.85);
+    }
+    
+    .cookie-consent-container {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
 }
