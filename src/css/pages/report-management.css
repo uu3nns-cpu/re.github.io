@@ -244,7 +244,7 @@
    ======================================== */
 .reports-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
     gap: var(--space-lg);
     margin-bottom: var(--space-xl);
 }
@@ -1071,7 +1071,7 @@ html[data-theme="light"] .btn-rm.secondary:hover:not(:disabled) {
    ======================================== */
 @media (max-width: 1200px) {
     .reports-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
     
     .filter-bar {

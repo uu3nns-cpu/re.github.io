@@ -591,54 +591,6 @@ html[data-theme="light"] .preset-badge-compact {
     font-weight: 700 !important;
 }
 
-/* 라이트모드 슬라이더 개선 */
-html[data-theme="light"] .risk-meter-slider {
-    background: rgba(200, 210, 230, 0.4) !important;
-    border: 1px solid rgba(100, 116, 139, 0.25) !important;
-}
-
-html[data-theme="light"] .risk-meter-slider::-webkit-slider-thumb {
-    background: var(--accent-primary) !important;
-    border: 3px solid white !important;
-    box-shadow: 0 2px 8px rgba(93, 95, 234, 0.5),
-                0 0 0 1px rgba(0, 0, 0, 0.15) !important;
-}
-
-html[data-theme="light"] .risk-meter-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.15) !important;
-    box-shadow: 0 4px 16px rgba(93, 95, 234, 0.6),
-                0 0 0 2px rgba(0, 0, 0, 0.2) !important;
-}
-
-html[data-theme="light"] .risk-meter-slider::-moz-range-thumb {
-    background: var(--accent-primary) !important;
-    border: 3px solid white !important;
-    box-shadow: 0 2px 8px rgba(93, 95, 234, 0.5),
-                0 0 0 1px rgba(0, 0, 0, 0.15) !important;
-}
-
-html[data-theme="light"] .risk-meter-slider::-moz-range-thumb:hover {
-    transform: scale(1.15) !important;
-    box-shadow: 0 4px 16px rgba(93, 95, 234, 0.6),
-                0 0 0 2px rgba(0, 0, 0, 0.2) !important;
-}
-
-html[data-theme="light"] .slider-labels span {
-    color: var(--text-secondary) !important;
-    font-weight: 500 !important;
-}
-
-html[data-theme="light"] .slider-labels span.active {
-    color: var(--accent-primary) !important;
-    font-weight: 700 !important;
-    text-shadow: 0 1px 2px rgba(93, 95, 234, 0.1) !important;
-}
-
-html[data-theme="light"] .slider-labels span.label-default {
-    color: var(--text-primary) !important;
-    font-weight: 600 !important;
-}
-
 /* ===========================================
    16. 반응형 최적화 유지
    =========================================== */
